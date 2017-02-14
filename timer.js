@@ -1,14 +1,31 @@
 function init() {
+	addMessageListeners();
 	startTimer();
 }
 
 function startTimer() {
-	var time = moment()
-	setInterval(function() {
-		var diff = moment().diff(time, 'seconds');
-		console.log(diff);
-		document.getElementById('time').innerText = diff;
-	}, 1000)
+	// sends message to background.js
+	chrome.runtime.sendMessage({"command": "startTimer"},
+		function(response) {
+			// response callback
+			console.log(response.message);
+		})
 }
 
-document.addEventListener('DOMContentLoaded', init)
+function updateTime(timeDifference) {
+	pomTimer = document.getElementById('time').innerText = timeDifference;
+	// console.log(pomTimer);
+}
+
+function addMessageListeners() {
+	chrome.runtime.onMessage.addListener(
+		function(request, sender, sendResponse) {
+			if (request.command === 'updateTime') {
+				updateTime(request.time);
+			}
+		});
+}
+
+
+// var pomTimer = document.getElementById('time').innerText;
+document.addEventListener('DOMContentLoaded', init);
