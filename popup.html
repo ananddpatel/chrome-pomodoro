@@ -1,0 +1,31 @@
+<!doctype html>
+<!--
+This page is shown when the extension button is clicked, because the
+"browser_action" field in manifest.json contains the "default_popup" key with
+value "popup.html".
+-->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <h1 class="">Tomato</h1>
+    <p class="">Your Pomodoro Timer</p>
+    <h3>Pomodoro</h3>
+    <div class="settings" id="pomodoro-section">
+      <input type="button" value="15">
+      <input type="button" value="25">
+      <input type="button" value="35">
+    </div>
+    <h3>Break</h3>
+    <div class="settings"></div>
+    <div class="settings" id="break-section">
+      <input type="button" value="5">
+      <input type="button" value="10">
+      <input type="button" value="15">
+    </div><br>
+    <a href="timer.html"><input type="submit" value="Start"></a>
+  </body>
+</html>
