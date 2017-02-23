@@ -8,24 +8,27 @@ value "popup.html".
   <head>
     <title>Getting Started Extension's Popup</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="popup.js"></script>
   </head>
   <body>
     <h1 class="">Tomato</h1>
-    <p class="">Your Pomodoro Timer</p>
-    <h3>Pomodoro</h3>
-    <div class="settings" id="pomodoro-section">
-      <input type="button" value="15">
-      <input type="button" value="25">
-      <input type="button" value="35">
-    </div>
-    <h3>Break</h3>
-    <div class="settings"></div>
-    <div class="settings" id="break-section">
-      <input type="button" value="5">
-      <input type="button" value="10">
-      <input type="button" value="15">
-    </div><br>
-    <a href="timer.html"><input type="submit" value="Start"></a>
+    <p class="">The Pomodoro Timer</p>
+    <!-- <form id="myform"> -->
+      <h3>Pomodoro</h3>
+      <div class="settings" id="pomodoro-section">
+        <input type="radio" name="work" value="900" checked>15
+        <input type="radio" name="work" value="1500">25
+        <input type="radio" name="work" value="2100">35
+      </div>
+
+      <h3>Break</h3>
+      <div class="settings" id="break-section">
+        <input type="radio" name="break" value="300" checked>5
+        <input type="radio" name="break" value="600">10
+        <input type="radio" name="break" value="900">35
+      </div>
+      <br>
+    <!-- </form> -->
+      <a href="timer.html"><input type="submit" id="startBtn" value="Start"></a>
+    <script src="popup.js"></script>
   </body>
 </html>
