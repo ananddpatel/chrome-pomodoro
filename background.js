@@ -59,7 +59,6 @@ function startTimer() {
 	states.current = "timer.html";
 
 	chrome.runtime.sendMessage({"update": "WORK"})
-	// changePopup();
 	chrome.browserAction.setPopup({popup: "timer.html"});
 
 	var timer = setInterval(function() {
@@ -67,7 +66,6 @@ function startTimer() {
 		if (diff >= workTime || !states.pomodoro) {
 			clearInterval(timer);
 			states.pomodoro = false;
-			// states.break = true;
 			if(states.break) {
 				startBreak();
 				notifyUser("Time for a break!!");
