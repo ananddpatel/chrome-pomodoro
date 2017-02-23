@@ -3,7 +3,7 @@
 
 	"name": "Pomodoro Tomato",
 	"description": "This extension is a timer based on the Pomodoro Technique",
-	"version": "1.0",
+	"version": "1.0",	
 	"icons": {
 		"16": "icon.png",
         "48": "icon.png",
